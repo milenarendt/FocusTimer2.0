@@ -9,8 +9,11 @@ export default function Timer({
 
   let timerTimeOut
   let minutes = Number(minutesDisplay.textContent) // pega o valor inicial
+  
 
   function updateDisplay (newMinutes, seconds) {
+
+    
     newMinutes = newMinutes === undefined ? minutes : newMinutes
     seconds = seconds === undefined ? 0 : seconds
 
@@ -19,7 +22,7 @@ export default function Timer({
   }
 
   function reset() {
-    
+
     clearInterval(timerTimeOut)
     updateDisplay(minutes, 0)
     

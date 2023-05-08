@@ -9,8 +9,14 @@
 
   --bg--color: white;
   --text-color: #323238;
-
   --bg-primary: #900fa1;
+  --card-bg-color: #E1E1E6;
+
+  --dark-bg-color: #121214;
+  --dark-text-color: white;
+  --dark-elements-color: #29292E;
+  --dark-fill-elements: #C4C4CC;
+  --dark-bg-primary: #400947;
 
 }
 
@@ -18,8 +24,22 @@
   display: none;
 }
 
+
+
 body {
   background-color: var(bg--color);
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+}
+
+header {
+  position: absolute;
+  top: 6rem;
+  right: 6rem;
 }
 
 main {
@@ -28,7 +48,7 @@ main {
   align-items: center;
   gap: 19.2rem;
 
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .focus-timer {
@@ -65,14 +85,81 @@ button {
   gap: 3.2rem;
 }
 
+.card {
+  width: 13.8rem;
+  height: 15.2rem;
+  background-color: var(--card-bg-color);
+  border-radius: 2.4rem;
 
-.selected .bg {
-  fill: var(--bg-primary);
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
 }
 
-.selected .fill {
-  fill: var(--bg--color);
+.volume-slider {
+  appearance: none;
+  background-color: var(--text-color);
+  width: 9rem;
+  height: .5rem;
+  border-radius: .5rem;
+
+}
+
+.volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  background-color: var(--text-color);
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 100%;
 }
 
 
+.selected {
+  background-color: #900fa1;
+}
+
+.selected svg path {
+  fill: var(--card-bg-color);
+}
+
+.selected .volume-slider, .selected .volume-slider::-webkit-slider-thumb {
+  background-color: var(--card-bg-color);
+}
+
+
+/* dark mode */
+
+.dark-mode {
+  background-color: var(--dark-bg-color);
+}
+
+.dark-mode #timer {
+  color: var(--dark-text-color);
+}
+
+.dark-mode #controls button svg path{
+  fill: var(--dark-text-color);
+}
+
+.dark-mode .sounds button {
+  background-color: var(--dark-elements-color);
+}
+
+.dark-mode .sounds button svg path {
+  fill: var(--dark-fill-elements);
+}
+
+.dark-mode .volume-slider {
+  background-color: var(--dark-fill-elements);
+}
+
+.dark-mode .volume-slider::-webkit-slider-thumb {
+  background-color: var(--dark-fill-elements);
+}
+
+.dark-mode .sounds .selected {
+  background-color: var(--dark-bg-primary);
+}
 

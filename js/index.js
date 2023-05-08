@@ -24,12 +24,14 @@ const timer = Timer({
 
 const sounds = Sounds()
 
+
 Events({ 
   controls,
   timer,
   sounds,
-  minutesDisplay
+  minutesDisplay,
 })
+
 
 
 

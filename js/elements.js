@@ -15,6 +15,16 @@ const fireButton = document.querySelector('.fire-sound')
 const increaseTimeButton = document.querySelector('.increaseTime')
 const decreaseTimeButton = document.querySelector('.decreaseTime')
 
+const lightThemeButton = document.querySelector('.lightThemeBtn')
+const darkThemeButton = document.querySelector('.darkThemeBtn')
+const body = document.querySelector('body')
+
+const forestVolumeSlider = document.querySelector('#forestSound')
+const rainVolumeSlider = document.querySelector('#rainSound')
+const coffeVolumeSlider = document.querySelector('#coffeSound')
+const fireVolumeSlider = document.querySelector('#fireSound')
+
+
 
 export {
   minutesDisplay,
@@ -27,5 +37,12 @@ export {
   coffeButton,
   fireButton,
   increaseTimeButton,
-  decreaseTimeButton
+  decreaseTimeButton,
+  lightThemeButton,
+  darkThemeButton,
+  body,
+  forestVolumeSlider,
+  rainVolumeSlider,
+  coffeVolumeSlider,
+  fireVolumeSlider
 }

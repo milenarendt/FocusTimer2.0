@@ -1,9 +1,16 @@
+import { 
+  forestVolumeSlider,
+  rainVolumeSlider,
+  coffeVolumeSlider,
+  fireVolumeSlider } from "./elements.js"
+
 export default function Sounds() {
 
 const forestSound = new Audio('https://github.com/isabeladuarte/challenge-explorer-focus-timer-version2/blob/master/audio/Floresta.mp3?raw=true')
 const rainSound = new Audio('https://github.com/isabeladuarte/challenge-explorer-focus-timer-version2/blob/master/audio/Chuva.mp3?raw=true')
 const coffeSound = new Audio('https://github.com/isabeladuarte/challenge-explorer-focus-timer-version2/blob/master/audio/Cafeteria.mp3?raw=true')
 const fireSound = new Audio('https://github.com/isabeladuarte/challenge-explorer-focus-timer-version2/blob/master/audio/Lareira.mp3?raw=true')
+
 
 forestSound.loop = true
 rainSound.loop = true
@@ -54,6 +61,25 @@ function playFireSound() {
   }
 }
 
+function forestVolume() {
+  const volume = forestVolumeSlider.value
+  forestSound.volume = volume
+}
+
+function rainVolume() {
+  const volume = rainVolumeSlider.value
+  rainSound.volume = volume
+}
+
+function coffeVolume() {
+  const volume = coffeVolumeSlider.value
+  coffeSound.volume = volume
+}
+
+function fireVolume() {
+  const volume = fireVolumeSlider.value
+  fireSound.volume = volume
+}
 
 
 return {
@@ -64,6 +90,10 @@ return {
   playForestSound,
   playRainSound,
   playCoffeSound,
-  playFireSound
+  playFireSound,
+  forestVolume,
+  rainVolume,
+  coffeVolume,
+  fireVolume
 }
 }

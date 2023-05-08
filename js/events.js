@@ -7,14 +7,21 @@ import {
   forestButton,
   rainButton,
   coffeButton,
-  fireButton
+  fireButton,
+  lightThemeButton,
+  body,
+  darkThemeButton,
+  forestVolumeSlider,
+  rainVolumeSlider,
+  coffeVolumeSlider,
+  fireVolumeSlider
 } from "./elements.js"
 
 export default function Events({
   controls,
   timer,
   sounds,
-  minutesDisplay
+  minutesDisplay,
 }) {
 
   let minutes = Number(minutesDisplay.textContent) 
@@ -55,7 +62,6 @@ export default function Events({
     coffeButton.classList.remove('selected')
     fireButton.classList.remove('selected')
     sounds.playForestSound()
-
   })
 
   rainButton.addEventListener('click', function() {
@@ -82,5 +88,34 @@ export default function Events({
     sounds.playFireSound()
   })
 
+
+  lightThemeButton.addEventListener('click', function() {
+    body.classList.add('dark-mode')
+    lightThemeButton.classList.add('hide')
+    darkThemeButton.classList.remove('hide')
+  })
+
+  darkThemeButton.addEventListener('click', function() {
+    body.classList.remove('dark-mode')
+    lightThemeButton.classList.remove('hide')
+    darkThemeButton.classList.add('hide')
+  })
+
+
+  forestVolumeSlider.addEventListener('input', function() {
+    sounds.forestVolume()
+  })
+
+  rainVolumeSlider.addEventListener('input', function() {
+    sounds.rainVolume()
+  })
+
+  coffeVolumeSlider.addEventListener('input', function() {
+    sounds.coffeVolume()
+  })
+
+  fireVolumeSlider.addEventListener('input', function() {
+    sounds.fireVolume()
+  })
 
   }
